@@ -10,10 +10,11 @@
     <div class="flex flex-col items-center mx-auto">
         <div class="w-3/4 border-b border-b-black flex flex-row justify-between items-end mb-4 mx-10">
             <span class="text-2xl text-[#2B3352] font-semibold">
-                06 de Noviembre de 2024
+                {{currentStringTime}}
             </span>
             <span class="text-5xl text-[#2B3352] font-bold">
-                01:27
+                {{ (currentTime.getHours() + '').padStart(2, '0') + ':' + (currentTime.getMinutes() + '').padStart(2, '0') }}
+
             </span>
         </div>
         <app-calendar></app-calendar>
