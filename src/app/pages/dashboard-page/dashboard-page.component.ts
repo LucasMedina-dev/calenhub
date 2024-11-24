@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from "../../components/header/header/header.component";
 import { CalendarComponent } from "../../components/calendar/calendar.component";
+import { SimpleformComponent } from "../../components/simpleform/simpleform.component";
 
 @Component({
   selector: 'app-dashboard-page',
   standalone: true,
-  imports: [HeaderComponent, CalendarComponent],
+  imports: [HeaderComponent, CalendarComponent, SimpleformComponent],
   templateUrl: './dashboard-page.component.html',
   styleUrl: './dashboard-page.component.scss'
 })

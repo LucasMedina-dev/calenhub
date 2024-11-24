@@ -1,0 +1,14 @@
+<div class="w-full h-full grid place-items-center" *ngIf="opened">
+    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-25" (click)="switchView()">
+    </div>
+    <div class="absolute top-24 left-50 m-auto w-[26rem] h-64 bg-[#D2E3E1] rounded-xl border border-slate-500 drop-shadow-xl" *ngIf="opened">
+        <div class="w-full h-full flex flex-col justify-between py-6 px-10">
+            <span class="text-[#2B3352] text-xl font-bold text-left">Nuevo calendario</span>
+            <input type="text" class="border-b-4 border-slate-600 bg-[#2B3352] bg-opacity-40 placeholder-black placeholder-opacity-40 pl-4 py-2 font-semibold" placeholder="Nombre del calendario">
+            <div class="flex flex-row justify-between">
+                <button class="bg-[#D0D0D0] bg-opacity-70 border border-slate-600 py-1.5 px-8 font-bold rounded-md" (click)="switchView()">Cancelar</button>
+                <button class="bg-[#2B5231] bg-opacity-70 border border-slate-600 py-1.5 px-20 font-bold text-white rounded-md">Crear</button>
+            </div>
+        </div>
+    </div>
+</div>
