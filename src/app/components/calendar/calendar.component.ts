@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarService } from '../../services/calendar.service';
-import { NgClass, NgFor } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-calendar',
   standalone:true,
-  imports:[NgFor,NgClass],
+  imports:[NgFor,NgClass,NgIf],
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
 })

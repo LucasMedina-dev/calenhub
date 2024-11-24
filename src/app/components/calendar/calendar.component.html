@@ -1,17 +1,14 @@
-<div class="mx-auto lg:mx-0">
-    <div class="bg-[#2B3352] w-[630px] h-[630px] px-12 rounded-md flex flex-col justify-center gap-y-5 py-20">
-      <div class="text-white text-base text-left border-b border-b-white w-full pb-1">
-        {{ currentYear }} - {{ months[currentMonth] }}
-      </div>
-      <div>
-        <div class="flex flex-row justify-between text-white">
+<div class="mx-auto lg:mx-0 w-[856px] h-[640px] shadow-2xl">
+    <div class="bg-[#2B3352] w-full h-full rounded-md flex flex-col justify-center gap-y-5 py-14">
+        <div class="w-4/5 mx-auto flex flex-row justify-between items-end text-white text-2xl">
           <span>{{ months[currentMonth] }} de {{ currentYear }}</span>
-          <div>
-            <button (click)="prevMonth()"><</button>
-            <button (click)="nextMonth()">></button>
+          <div class="self-end">
+            <button (click)="prevMonth()" class="text-4xl pr-3"><</button>
+            <button (click)="nextMonth()" class="text-4xl pl-3">></button>
           </div>
         </div>
-        <table class="text-white w-full mt-5">
+        <span class="w-full bg-slate-600 py-px"></span>
+        <table class="text-white w-4/5 mx-auto mt-5">
           <thead>
             <tr class="flex flex-row justify-between">
               <th>DO</th>
@@ -25,10 +22,10 @@
           </thead>
           <tbody>
             <tr *ngFor="let week of weeks" class="flex flex-row justify-between">
-                <td *ngFor="let day of week" class="py-5 w-2 text-center">
+                <td *ngFor="let day of week" class="w-5 py-5 text-center">
                     <span class="relative" [ngClass]="{'text-gray-500':day[1] != currentMonth+1}">
                         {{ day[0] || '' }}
-                        <span class="absolute -top-2.5 -left-3 size-10 opacity-0 rounded-full" [ngClass]="{'opacity-100 bg-slate-200 bg-opacity-25': day[0]===today[0] && day[1] === today[1]+1}">
+                        <span *ngIf="day[0]===today[0] && day[1] === today[1]+1" class="absolute -top-2.5 -left-3 size-10 rounded-full bg-slate-200 bg-opacity-25">
                         </span>
                     </span>
                     
@@ -37,7 +34,6 @@
           </tbody>
           
         </table>
-      </div>
     </div>
   </div>
   

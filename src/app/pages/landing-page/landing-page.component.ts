@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarComponent } from "../../components/calendar/calendar.component";
 import { TimeService } from '../../services/time.service';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-landing-page',
